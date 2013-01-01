@@ -3,12 +3,10 @@
 int main()
 {
     int result = 2;
-    for(int a = 1, b = 2; b < 4000000;){
-        b += a;
-        a = b - a;
-
-        if(b % 2 == 0)
-            result += b;
+    for(int a = 2, b = 8; b < 4000000;){
+        result += b;
+        b = 4 * b + a;
+        a = (b - a) / 4;
     }
 
     std::cout << result << std::endl;
